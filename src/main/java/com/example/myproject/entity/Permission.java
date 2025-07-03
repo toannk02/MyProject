@@ -1,11 +1,14 @@
 package com.example.myproject.entity;
 
 import jakarta.persistence.*;
+import lombok.Data;
+import lombok.ToString;
 
 import java.util.List;
 
 @Entity
 @Table(name = "permission")
+@Data
 public class Permission {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,6 +18,7 @@ public class Permission {
     @Column(name = "permission_type")
     private String type;
 
-    @OneToMany(mappedBy = "permission", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "permission", cascade = CascadeType.ALL,  fetch = FetchType.LAZY)
+    @ToString.Exclude
     private List<RolePermission> rolePermissions;
 }

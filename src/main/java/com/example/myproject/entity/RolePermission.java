@@ -1,9 +1,11 @@
 package com.example.myproject.entity;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
 @Entity
 @Table(name = "role_permission")
+@Data
 public class RolePermission {
     @Id @GeneratedValue
     private Long id;
