@@ -31,7 +31,7 @@ public class SecurityConfig {
                 .cors(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/auth/login").permitAll() // Permit all access to /auth/login
-                        .requestMatchers("/**").authenticated()
+                        .requestMatchers("/user/**").authenticated()
                 )
                 .exceptionHandling(e -> e.authenticationEntryPoint(jwtAuthenticationEntryPoint))
                 .addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class)

@@ -7,7 +7,7 @@ import lombok.Data;
 @Table(name = "role_permission")
 @Data
 public class RolePermission {
-    @Id @GeneratedValue
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne
