@@ -22,4 +22,9 @@ public class HttpResponse<T> implements Serializable {
     public static <T> HttpResponse<T> ok(T data) {
         return new HttpResponse<>(data, HttpStatus.OK.value(), "success");
     }
+
+    public static <T> HttpResponse<T> error(String message, int status) {
+        return new HttpResponse<>(null, status, message);
+    }
 }
+

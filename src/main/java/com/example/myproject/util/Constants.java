@@ -13,6 +13,8 @@ public class Constants {
     public static class status {
         public static final String ACTIVE = "ACTIVE";
         public static final String INACTIVE = "INACTIVE";
+        public static final String PENDING = "PENDING";
+        public static final String ORDERED = "ORDERED";
     }
 
     public static String validateOrder(String orderBy) {

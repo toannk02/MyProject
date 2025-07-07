@@ -3,6 +3,7 @@ package com.example.myproject.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
@@ -10,6 +11,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
+@ToString(exclude = "items")
 public class  Cart {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,7 +19,7 @@ public class  Cart {
     private Integer id;
 
     @Column(name = "created_at ")
-    private String created_at ;
+    private String created_at = LocalDateTime.now().toString();
 
     @ManyToOne
     @JoinColumn(name = "user_id", unique = true)
